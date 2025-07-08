@@ -1,0 +1,126 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d0d0d;
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 0 20px #00ffff40;
+}
+
+.navbar-brand {
+  font-family: monospace;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #0ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 6px #0ff, 0 0 10px #0ff;
+}
+
+.navbar-brand:hover {
+  color: #f0f;
+  transform: scale(1.1);
+  text-shadow: 0 0 10px #f0f, 0 0 20px #f0f;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #0ff;
+  box-shadow: 0 0 6px #0ff;
+  transition: width 0.4s ease;
+}
+
+.nav-link:hover {
+  color: #0ff;
+  text-shadow: 0 0 6px #0ff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff;
+}
+
+@media screen and (max-width: 768px) {
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 8px 0;
+  }
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  font-family: monospace;
+  color: #00ffff;
+  border-right: 2px solid #00ffff;
+  text-shadow: 0 0 3px #00ffff, 0 0 6px #00ffff;
+
+  animation: typing-then-erase 15s steps(11, end) infinite,
+             blink-cursor 0.7s step-end infinite;
+}
+
+@keyframes typing-then-erase {
+  0%    { width: 0 }           /* Start typing */
+  20%   { width: 11ch }        /* Finish typing in ~3s */
+  85%   { width: 11ch }        /* Hold for ~9.75s */
+  100%  { width: 0 }           /* Erase in last 2.25s */
+}
+
+@keyframes blink-cursor {
+  0%, 100% { border-color: transparent; }
+  50%     { border-color: #00ffff; }
+}
+.nav-link {
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+}
